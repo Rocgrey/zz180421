@@ -1,0 +1,6 @@
+1，首先进入项目文件夹，通过git init 初始化，将文件变为git可以管理的库
+2，git add
+3 git commit -m 'zhushi'
+4,关联到远程仓库，git remote add origin 远程仓库地址
+5，获取远程库与本地同步合并git pull --rebase origin master
+6, 推送：git push -u origin master
