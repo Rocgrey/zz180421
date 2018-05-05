@@ -1,6 +1,21 @@
-1，首先进入项目文件夹，通过git init 初始化，将文件变为git可以管理的库
-2，git add
+
+寤轰竴涓粨搴擄紝绮樿创浠ｇ爜
+echo "# useful-soft" >> README.md
+
+git init
+git add README.md
+
+git commit -m "first commit"
+[master (root-commit) 9464fc6] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+git remote add origin git@github.com:Rocgrey/useful-soft.git
+
+git push -u origin master
+
+1锛岄鍏堣繘鍏ラ」鐩枃浠跺す锛岄�氳繃git init 鍒濆鍖栵紝灏嗘枃浠跺彉涓篻it鍙互绠＄悊鐨勫簱
+2锛実it add
 3 git commit -m 'zhushi'
-4,关联到远程仓库，git remote add origin 远程仓库地址
-5，获取远程库与本地同步合并git pull --rebase origin master
-6, 推送：git push -u origin master
+4,鍏宠仈鍒拌繙绋嬩粨搴擄紝git remote add origin 杩滅▼浠撳簱鍦板潃
+5锛岃幏鍙栬繙绋嬪簱涓庢湰鍦板悓姝ュ悎骞秅it pull --rebase origin master
+6, 鎺ㄩ�侊細git push -u origin master
