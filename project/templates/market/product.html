@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% block link %}
+    <link type="text/css" rel="stylesheet" href="{% static 'product/css/product.css' %}">
+{% endblock link %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product</title>
+</head>
+<body>
+<productDiv>
+{#    <aside>#}
+
+<ul>
+        <img src="{{pro.img}}">
+        <article class="shoppingInfo">
+            <h2>{{ pro.name }}</h2>
+            <span class="unit">{{ pro.specifics }}</span>
+            <p class="price"><span>￥{{ pro.price }}</span><span><s>￥{{ pro.marketPrice }}</s></span>
+            </p>
+        </article>
+</ul>
+{#        <section>#}
+{#            <button class="subBtn">-</button>#}
+{#            <span>0</span>#}
+{#            <button class="addBtn">+</button>#}
+{#        </section>#}
+{#    #}
+{#    </aside>#}
+
+</productDiv>
+</body>
+</html>
