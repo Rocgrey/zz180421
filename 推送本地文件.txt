@@ -1,0 +1,21 @@
+
+建一个仓库，粘贴代码
+echo "# useful-soft" >> README.md
+
+git init
+git add README.md
+
+git commit -m "first commit"
+[master (root-commit) 9464fc6] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+git remote add origin git@github.com:Rocgrey/useful-soft.git
+
+git push -u origin master
+
+1，首先进入项目文件夹，通过git init 初始化，将文件变为git可以管理的库
+2，git add
+3 git commit -m 'zhushi'
+4,关联到远程仓库，git remote add origin 远程仓库地址
+5，获取远程库与本地同步合并git pull --rebase origin master
+6, 推送：git push -u origin master

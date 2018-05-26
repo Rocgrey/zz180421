@@ -1,0 +1,15 @@
+终端切换到文件目录
+黑终端django-admin startproject project
+cd project
+python manage.py startapp myApp
+激活应用
+启动服务测试
+配置数据
+创建模型
+生成迁移文件	python manage.py makemigrations
+执行迁移   	python manage.py migrate
+修改主路由  在主路由之下添加url(r'^', include('myApp.urls')
+创建子路由文件myApp
+中间修改模型的话，一般直接生成迁移文件再迁移即可
+出现问题，方案一删除数据库，删除所有迁移文件
+方案二：删除有关迁移文件，谨慎操作
