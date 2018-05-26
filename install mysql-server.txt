@@ -1,0 +1,26 @@
+sudo apt-get install mysql-server;(安装过程需要设置账户密码)
+开启root用户全程访问权限
+mysql -uroot -p;（回车，输密码）
+use mysql;
+update user set host="%" where user = "root";
+grant all privileges on "*.*" to "root"@"%" identified by "hi12345"（hi1234是你想更新的密码）
+flush privileges;
+quit
+sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf(配置环境)
+将bind-address=127.0.0.1修改为bind-address=0.0.0.0
+:wq
+sudo service mysql restart
+配置云服务器安全组
+云服务器ESC》网络和安全》安全组，在安全组的操作最右边点击【配置规则】，进入配置规则之后，点击右上角添加【安全组规则】，弹出的选项卡里把【协议类型】选为【全部】，【授权对象】为0.0.0.0/0
+确定就可以了
+如果阿里云域名已经解析过，再次访问就可以用域名访问mysql了，用户，密码。
+
+
+域名解析
+
+登录阿里云服务器
+云解析控制台
+1添加域名：
+域名解析列表，如果用阿里云购买的域名，则域名已经添加进来了，没有的右上角添加域名，在弹出的对话框中输入域名，确定就可以了
+2添加A记录和MX（邮箱解析）记录
+添加域名后，点击解析或者设置解析，点击网站解析，【记录值】填写网站服务器的IP地址（公）即可。
