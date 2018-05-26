@@ -1,4 +1,4 @@
-
+这部分是新建的时候用{
 建一个仓库，粘贴代码
 echo "# useful-soft" >> README.md
 
@@ -11,7 +11,9 @@ git commit -m "first commit"
  create mode 100644 README.md
 git remote add origin git@github.com:Rocgrey/useful-soft.git
 
-git push -u origin master
+git push -u origin master}
+
+以下这些是没有readme.txt文件的时候用
 
 1，首先进入项目文件夹，通过git init 初始化，将文件变为git可以管理的库
 2，git add
