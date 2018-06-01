@@ -21,3 +21,5 @@ git push -u origin master}
 4,关联到远程仓库，git remote add origin 远程仓库地址
 5，获取远程库与本地同步合并git pull --rebase origin master
 6, 推送：git push -u origin master
+如果出现冲突：
+参考廖雪峰：https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840202368c74be33fbd884e71b570f2cc3c0d1dcf000
