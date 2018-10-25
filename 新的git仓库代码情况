@@ -1,0 +1,115 @@
+(所有的前提都是本机上安装了Git，并且在github上已经有账号了)
+首先在本机上新建一个文件夹，右键git bash here,进入命令框
+在本机上生成密钥文件
+$ ssh-keygen -t rsa -C "fbn@163.com"
+--------------------------------------------------------------------------------
+
+**************************************************************
+然后会出现如下内容：
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/cx/.ssh/id_rsa):
+/c/Users/cx/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/cx/.ssh/id_rsa.
+Your public key has been saved in /c/Users/cx/.ssh/id_rsa.pub.
+The key fingerprint is:
+The key's randomart image is:
++---[RSA 2048]----+
+|  ..o            |
+| . +.o           |
+| .o++      .     |
+|. +oo     o .    |
+| . +.   S* o     |
+|  oo.....+* . o  |
+| .o.oE+.. .oo=...|
+|  .. +o. o o==.o.|
+|    ..  . . ++o  |
++----[SHA256]-----+
+*********************************************************************
+
+
+这说明我的密钥已经在/c/Users/cx/.ssh/id_rsa这个文件里了，进入.ssh文件夹下，打开id_rsa.pub，复制里面的key，
+回到github，进入Account Settings，左边选择SSH Keys，Add SSH Key,title随便填，粘贴key。为了验证是否成功，在Git bash下输入：
+$ ssh -T git@github.com 
+-----------------------------------------------------------------------------------
+然后会出现如下内容：
+*********************************************************************
+Hi Rocgrey! You've successfully authenticated, but GitHub does not provide shell                                                                                                                                                                                                          access.
+**********************************************************************
+这表示已经连接上github了
+
+设置username和email(这一步如果以前设置过，后边可以不用再设置了）
+-------------------------------------------------------------------------------------
+$ git config --global user.name "Rocgr"  
+$ git config --global user.email "Rocgr_email@youremail.com"
+
+
+接下来初始化本机这个文件夹，使之成为仓库
+首先添加一些东西生成READM.md文件
+$ echo "#book" >> READM.md
+这个""里的东西可以自己修改
+-------------------------------------------------------------------------------------
+接下来初始化
+$ git init
+--------------------------------------------------------------------------------------
+添加远程地址：
+$ git remote add origin git@github.com:Rocgrey/book.git
+--------------------------------------------------------------------------------------
+
+最后就可以提交并上传文件了
+$ git add READM.md
+---------------------------------------------------------------------------------------
+
+$ git commit -m "first commit"
+
+----------------------------------------------------------------------------------------
+一定要备注信息，-m里的内容一定要写
+
+然后推送到远程：
+$ git push origin master
+
+
+
+传一些这个文件夹下的文件到远程就可以了
+———————————————————————————————————————————————————————————————————————————————————————
+$ git add HTTP权威指南.pdf
+$ git commit -m "book of HTTP"
+_______________________________________________________________________________________
+会出现：
+********************************************************************************
+[master 370085a] book of HTTP
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 "HTTP\346\235\203\345\250\201\346\214\207\345\215\227.pdf"
+********************************************************************************
+$ git push origin master
+_______________________________________________________________________________________
+会出现：
+*********************************************************************************
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 81.13 MiB | 470.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+remote: warning: See http://git.io/iEPt8g for more information.
+remote: warning: File HTTP权威指南.pdf is 85.12 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+To github.com:Rocgrey/book.git
+   8058ea5..370085a  master -> master
+
+*************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
